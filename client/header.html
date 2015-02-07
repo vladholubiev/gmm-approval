@@ -1,7 +1,21 @@
 <template name="header">
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-            {{> loginButtons }}
-        </ul>
-    </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">GMM Approval</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="navbar-form">
+                        <button type="button" id="post-link"
+                                class="btn btn-primary btn-block"> Post a link
+                        </button>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{> loginButtons}}
+                </ul>
+            </div>
+        </div>
+    </nav>
 </template>

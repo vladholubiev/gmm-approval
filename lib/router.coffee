@@ -6,4 +6,4 @@ Router.configure
     Meteor.subscribe "links"
 
 Router.route "/",
-  name: "index"
+  name: "main"
