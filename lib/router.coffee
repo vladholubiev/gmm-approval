@@ -7,3 +7,5 @@ Router.configure
 
 Router.route "/",
   name: "main"
+Router.route "/new-link",
+    name: "newLink"

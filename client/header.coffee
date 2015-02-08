@@ -1,4 +1,3 @@
-Template.header.helpers "userName": ->
-  if Meteor.user()
-    Meteor.user().profile.name
-  else ""
+Template.header.events
+  "click #post-link": ->
+    Router.go "newLink"
