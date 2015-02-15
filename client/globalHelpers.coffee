@@ -8,3 +8,5 @@ Template.registerHelper "shortenName", (name) ->
       firstName
     else
       name
+Template.registerHelper "formatUnixTime", (timestamp) ->
+  moment.unix(timestamp).format("HH:mm:ss DD.MM.YYYY")

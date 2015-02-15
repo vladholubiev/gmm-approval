@@ -1,2 +1,4 @@
 Meteor.publish "links", ->
-  Links.find {}
+  Links.find {},
+    sort:
+      date: -1

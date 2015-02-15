@@ -1,5 +1,7 @@
 Template.links.helpers
-  links: -> Links.find()
+  links: -> Links.find {},
+    sort:
+      date: -1
   linksCount: ->
     Links.find().count()
 
