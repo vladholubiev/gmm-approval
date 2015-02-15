@@ -13,14 +13,8 @@
         </div>
         <div class="collapse navbar-collapse" id="nav-links">
             <ul class="nav navbar-nav">
-                <li class="disabled"><a href="#">GMM Contests</a></li>
-                <li class="disabled"><a href="#">GMM Passport</a></li>
-                <li class="navbar-form">
-                    <button type="button" id="post-link"
-                            class="btn btn-primary btn-block"
-                            disabled={{isLoggedOut}}>Новий лінк
-                    </button>
-                </li>
+                <li class="{{#if isLoggedOut}} disabled {{else}} {{/if}}"><a href="{{userProfileLink}}">Моя сторінка</a></li>
+                <li class="{{#if isLoggedOut}} disabled {{else}} {{/if}}"><a href="/new-link">Новий лінк</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{> loginButtons}}

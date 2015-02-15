@@ -1,7 +1,10 @@
-Template.header.events
-  "click #post-link": ->
-    Router.go "newLink"
+Template.header.rendered = ->
+  highlightSelectedNavigationBarSection.call this
 
-Template.header.helpers
-  isLoggedOut: ->
-    not (Meteor.user() and Meteor.userId())
+highlightSelectedNavigationBarSection = ->
+  sections = this.$('li')
+  sections.on 'click', ->
+    sections.removeClass 'active'
+    $(this).addClass 'active'
+  this.$('.navbar-brand').on 'click', ->
+    sections.removeClass 'active'
