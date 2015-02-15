@@ -1,13 +1,18 @@
 Template.newLink.events
   "click #post-links": (event) ->
     event.preventDefault()
-    links = $("#new-links").val().split "\n"
-    #TODO validate links: domain, length, limit
-    pushLink link for link in links
-    Router.go "/"
+    linksBoxText = $("#new-links").val().trim()
+    links = linksBoxText.split("\n").filter((el) -> el.length > 0)
+    #TODO validate links: domain, limit
+    if links.length > 0
+      pushLink link for link in links
+      Router.go "/"
 
 pushLink = (link) ->
+  #TODO Check if link is already in DB
   Links.insert
-    links: link
+    link: link
     date: moment().unix()
     owner: Meteor.userId()
+    ownerName: Meteor.user().profile.name
+    approvalStatus: "processing"

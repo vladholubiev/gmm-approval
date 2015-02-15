@@ -1,20 +1,16 @@
 <template name="newLink">
     <h3 class="text-center">Опублікувати нове посилання на затвердження</h3>
 
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <form role="form">
-                <div class="form-group">
-                    <textarea class="form-control" name="new-links" id="new-links"
-                              cols="40" rows="10"
-                              placeholder="Кілька посилань, по одному на рядок"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" id="post-links">
-                    Надіслати
-                </button>
-            </form>
-        </div>
+    <div class="col-md-6 col-md-offset-3">
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" name="new-links" id="new-links"
+                          cols="40" rows="10"
+                          placeholder="Кілька посилань, по одному на рядок"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="post-links">
+                Надіслати
+            </button>
+        </form>
     </div>
-    <div class="col-md-3"></div>
 </template>
