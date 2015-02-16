@@ -1,4 +1,4 @@
-Template.links.helpers
+Template.links_list.helpers
   links: -> Links.find {},
     sort:
       date: -1

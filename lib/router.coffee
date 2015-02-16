@@ -8,10 +8,12 @@ Router.configure
 Router.route "/",
   name: "main"
 Router.route "/new-link",
-  name: "newLink"
+  name: "new_link"
 Router.route "/post/:_id",
-  name: "postPage"
+  name: "post"
   data: -> Links.findOne @params._id
 Router.route "/user/:_id",
-  name: "user"
-  data: -> Links.find owner: @params._id
+  name: "user_profile"
+  data: -> Links.find owner: @params._id,
+    sort:
+      date: -1

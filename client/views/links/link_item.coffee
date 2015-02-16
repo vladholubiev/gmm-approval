@@ -1,4 +1,4 @@
-Template.linksPanelBody.helpers
+Template.link_item.helpers
   "getIconForApprovalStatus": (status) ->
     switch status
       when "published" then "ok"

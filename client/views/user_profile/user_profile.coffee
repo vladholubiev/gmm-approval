@@ -1,4 +1,4 @@
-Template.user.helpers
+Template.user_profile.helpers
   "username": (that) ->
     that.fetch()[0].ownerName
   "userLinksCount": (that) ->
