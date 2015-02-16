@@ -14,6 +14,4 @@ Router.route "/post/:_id",
   data: -> Links.findOne @params._id
 Router.route "/user/:_id",
   name: "userProfile"
-  data: -> Links.find owner: @params._id,
-    sort:
-      date: -1
+  data: -> @params._id

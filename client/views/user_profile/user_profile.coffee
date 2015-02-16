@@ -1,5 +1,9 @@
 Template.userProfile.helpers
-  "username": (that) ->
-    that.fetch()[0].ownerName
-  "userLinksCount": (that) ->
-    that.fetch().length
+  "username": (userId) ->
+    Meteor.call "getUsernameById", userId, (err, result) ->
+      Session.set "viewingUserName", result
+    Session.get "viewingUserName"
+  "userLinksCount": (userId) ->
+    Meteor.call "getUserLinksCount", userId, (err, result) ->
+      Session.set "viewingUserLinksCount", result
+    Session.get "viewingUserLinksCount"

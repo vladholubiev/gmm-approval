@@ -1,8 +1,21 @@
 @Links = new Mongo.Collection "links"
-#@Pages = new Meteor.Pagination Links,
-#  perPage: 10
-#  itemTemplate: "linksPanelBody"
-#  infinite: true
+@LinksListPages = new Meteor.Pagination Links,
+  templateName: "linksList"
+  itemTemplate: "linkItem"
+  perPage: 25
+  infinite: true
+  dataMargin: 0
+  sort:
+    date: -1
+
+@UserLinksListPages = new Meteor.Pagination Links,
+  templateName: "userProfile"
+  itemTemplate: "linkItem"
+  perPage: 25
+  infinite: true
+  dataMargin: 0
+  sort:
+    date: -1
 
 Links.allow
   insert: (userId, doc) ->

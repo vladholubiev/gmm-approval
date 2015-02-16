@@ -1,4 +1,4 @@
-Meteor.publish "links", ->
-  Links.find {},
-    sort:
-      date: -1
+#Meteor.publish "links", ->
+#  Links.find {},
+#    sort:
+#      date: -1
