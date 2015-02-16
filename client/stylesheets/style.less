@@ -18,6 +18,12 @@ body {
   align-items: center;
 }
 
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 #navbar-brand-logo {
   max-width: 50%;
   margin-top: -7px;
@@ -47,3 +53,11 @@ body {
   color: #888;
 }
 
+.pasted-links {
+  max-width: 75%;
+}
+
+.pasted-link {
+  max-width: 90%;
+  .text-overflow();
+}

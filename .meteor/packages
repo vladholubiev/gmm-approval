@@ -16,3 +16,7 @@ accounts-google
 service-configuration
 less
 momentjs:moment
+meteorhacks:npm
+
+
+npm-container

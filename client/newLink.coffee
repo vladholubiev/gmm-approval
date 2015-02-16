@@ -1,9 +1,7 @@
 Template.newLink.events
   "click #post-links": (event) ->
     event.preventDefault()
-    linksBoxText = $("#new-links").val().trim()
-    links = linksBoxText.split("\n").filter((el) -> el.length > 0)
-    #TODO validate links: domain, limit
+    links = $("#new-links").val().trim().split("\n").filter((el) -> el.length > 0)
     if links.length > 0
       pushLink link for link in links
       Router.go "/"
