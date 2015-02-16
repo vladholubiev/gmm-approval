@@ -1,6 +1,5 @@
 Template.linksList.helpers
-  links: -> Links.find {},
-    sort:
-      date: -1
   linksCount: ->
-    Links.find().count()
+    Meteor.call "getAllLinksCount", (err, result) ->
+      Session.set "allLinksCount", result
+    Session.get "allLinksCount"

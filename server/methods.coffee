@@ -3,3 +3,5 @@ Meteor.methods
     Meteor.users.findOne(_id: userId)?.profile.name
   getUserLinksCount: (userId) ->
     Links.find(owner: userId).count()
+  getAllLinksCount: ->
+    Links.find().count()
