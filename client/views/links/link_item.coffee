@@ -17,7 +17,9 @@ Template.linkItem.helpers
       when "malformed" then "Неправильне посилання"
 
 Template.linkItem.events
-  "click .open-comments": ->
+  "click .open-comments": (e) ->
+    $(e.target).tooltip "hide"
     Router.go "/post/#{@_id}"
-  "click .link-owner-name": ->
+  "click .link-owner-name": (e) ->
+    $(e.target).tooltip "hide"
     Router.go "/user/#{@owner}"
