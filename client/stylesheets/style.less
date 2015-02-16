@@ -13,6 +13,11 @@ body {
 //  z-index: -1;
 //}
 
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
 #navbar-brand-logo {
   max-width: 50%;
   margin-top: -7px;
@@ -27,16 +32,18 @@ body {
 }
 
 .well {
+  .vertical-center;
   background-color: #ffffff;
   border: none;
   border-radius: 0;
-  box-shadow: none;
   border-bottom: 1px solid #eee;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  box-shadow: none;
+  height: 80px;
+  margin: 0;
 }
 
 .link-date {
   font-size: 13px;
   color: #888;
 }
+

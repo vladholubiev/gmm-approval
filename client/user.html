@@ -1,7 +1,14 @@
 <template name="user">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">{{username this}} : {{userLinksCount this}} посилань</h3>
+            <h3 class="panel-title">
+                <span class="glyphicon glyphicon-user"></span>
+                {{username this}}
+                <span class="pull-right" title="Посилань">
+                    <span class="glyphicon glyphicon-link"></span>
+                    {{userLinksCount this}}
+                </span>
+            </h3>
         </div>
         {{> linksPanelBody this}}
     </div>

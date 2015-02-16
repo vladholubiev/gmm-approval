@@ -13,8 +13,18 @@
         </div>
         <div class="collapse navbar-collapse" id="nav-links">
             <ul class="nav navbar-nav">
-                <li class="{{#if isLoggedOut}} disabled {{else}} {{/if}}"><a href="{{userProfileLink}}">Моя сторінка</a></li>
-                <li class="{{#if isLoggedOut}} disabled {{else}} {{/if}}"><a href="/new-link">Новий лінк</a></li>
+                <li class="{{#if isLoggedOut}} disabled {{else}} {{/if}}">
+                    <a href="{{userProfileLink}}">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Моя сторінка
+                    </a>
+                </li>
+                <li class="{{#if isLoggedOut}} disabled {{else}} {{/if}}">
+                    <a href="/new-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Новий лінк
+                    </a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{> loginButtons}}
