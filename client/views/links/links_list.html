@@ -1,4 +1,4 @@
-<template name="links_list">
+<template name="linksList">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -6,10 +6,8 @@
                 {{linksCount}} посилань
             </h3>
         </div>
-        <div class="panel-body">
-            {{#each links}}
-                {{> link_item}}
-            {{/each}}
-        </div>
+        {{#each links}}
+            {{> linkItem}}
+        {{/each}}
     </div>
 </template>

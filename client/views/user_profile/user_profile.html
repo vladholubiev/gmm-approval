@@ -1,4 +1,4 @@
-<template name="user_profile">
+<template name="userProfile">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -10,6 +10,8 @@
                 </span>
             </h3>
         </div>
-        {{> linksPanelBody this}}
+        {{#each this}}
+            {{> linkItem}}
+        {{/each}}
     </div>
 </template>

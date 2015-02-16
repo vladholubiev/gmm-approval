@@ -1,4 +1,4 @@
-Template.new_link.events
+Template.newLink.events
   "click #post-links": (event) ->
     event.preventDefault()
     links = $("#new-links").val().trim().split("\n").filter((el) -> el.length > 0)

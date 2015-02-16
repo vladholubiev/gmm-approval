@@ -1,4 +1,4 @@
-Template.link_item.helpers
+Template.linkItem.helpers
   "getIconForApprovalStatus": (status) ->
     switch status
       when "published" then "ok"
@@ -15,3 +15,9 @@ Template.link_item.helpers
 
       when "processing" then "Оброблення..."
       when "malformed" then "Неправильне посилання"
+
+Template.linkItem.events
+  "click .open-comments": ->
+    Router.go "/post/#{@_id}"
+  "click .link-owner-name": ->
+    Router.go "/user/#{@owner}"
