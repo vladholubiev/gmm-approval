@@ -5,3 +5,5 @@ Meteor.methods
     Links.find(owner: userId).count()
   getAllLinksCount: ->
     Links.find().count()
+  getPostById: (postId) ->
+    Links.findOne(_id: postId)

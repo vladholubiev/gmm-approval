@@ -3,6 +3,12 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/meteor-pages/examples/basic/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/meteor-pages/examples/infinite/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/meteor-pages/examples/iron-router/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/meteor-pages/examples/multi-collection/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/meteor-pages/examples/table/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/meteor-pages/examples/test/.meteor/local" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

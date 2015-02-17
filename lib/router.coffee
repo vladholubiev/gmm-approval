@@ -11,7 +11,11 @@ Router.route "/new-link",
   name: "newLink"
 Router.route "/post/:_id",
   name: "post"
-  data: -> Links.findOne @params._id
+  data: ->
+    #Workaround. Links subscription doesn't work with pagination
+    Meteor.call "getPostById", @params._id, (err, result) ->
+      Session.set "viewingPost", result
+    Session.get "viewingPost"
 Router.route "/user/:_id",
   name: "userProfile"
   data: -> @params._id

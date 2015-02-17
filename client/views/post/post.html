@@ -1,14 +1,10 @@
 <template name="post">
     <div class="panel panel-default">
+        <div class="panel-heading">
+            {{> linkTitle}}
+        </div>
         <div class="panel-body">
-            <div class="row">
-                <div class="col-xs-8 col-sm-6 col-md-6 col-lg-8">
-                    {{> linkTitle}}
-                </div>
-                <div class="col-xs-4 col-sm-6 col-md-6 col-lg-4">
-                    <h5><span class="label label-default pull-right">{{approvalStatus}}</span></h5>
-                </div>
-            </div>
+            {{> disqus}}
         </div>
     </div>
 </template>

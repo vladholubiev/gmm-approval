@@ -1,5 +1,5 @@
 Template.linkItem.helpers
-  "getIconForApprovalStatus": (status) ->
+  getIconForApprovalStatus: (status) ->
     switch status
       when "published" then "ok"
       when "pending" then "time"
@@ -7,7 +7,7 @@ Template.linkItem.helpers
 
       when "processing" then "refresh"
       when "malformed" then "remove"
-  "getTitleForApprovalStatus": (status) ->
+  getTitleForApprovalStatus: (status) ->
     switch status
       when "published" then "Опубліковано"
       when "pending" then "Очікує"
