@@ -18,6 +18,7 @@ deps@1.0.6
 ejson@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
+gandev:server-eval@0.6.6
 geojson-utils@1.0.2
 google@1.1.4
 handlebars@1.0.2
