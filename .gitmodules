@@ -1,6 +1,0 @@
-[submodule "packages/meteor-disqus"]
-	path = packages/meteor-disqus
-	url = https://github.com/obvio171/meteor-disqus.git
-[submodule "packages/meteor-pages"]
-	path = packages/meteor-pages
-	url = https://github.com/alethes/meteor-pages
