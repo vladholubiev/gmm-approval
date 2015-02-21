@@ -36,3 +36,7 @@ scheduledLinkApprovalStatusUpdate = ->
     updateLinkApprovalStatus link._id, link
 
 Meteor.setInterval scheduledLinkApprovalStatusUpdate, ALL_LINKS_UPDATE_INTERVAL
+
+Meteor.methods
+  forceUpdateLinkStatus: (link) ->
+    updateLinkApprovalStatus link._id, link
