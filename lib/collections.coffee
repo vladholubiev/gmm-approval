@@ -16,6 +16,8 @@
   perPage: 25
   infinite: true
   dataMargin: 0
+  availableSettings:
+    filters: yes
   sort:
     date: -1
 

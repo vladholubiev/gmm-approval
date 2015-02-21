@@ -1,3 +1,8 @@
+Template.userProfile.rendered = ->
+  UserLinksListPages.set
+    filters:
+      owner: this.data
+
 Template.userProfile.helpers
   "username": (userId) ->
     Meteor.call "getUsernameById", userId, (err, result) ->
