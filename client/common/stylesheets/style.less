@@ -43,8 +43,8 @@ body {
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #eee;
-//  border-left: 1px solid #eee;
-//  border-right: 1px solid #eee;
+  //  border-left: 1px solid #eee;
+  //  border-right: 1px solid #eee;
   box-shadow: none;
   height: 80px;
   margin: 0;
@@ -56,7 +56,6 @@ body {
     border-top: 1px solid #eee;
   }
 }
-
 
 .link-date {
   font-size: 13px;
@@ -70,4 +69,23 @@ body {
 .pasted-link {
   max-width: 90%;
   .text-overflow();
+}
+
+.glyphicon-wrapper {
+  &-ok, &-ok:hover, &-ok:active, &-ok:focus {
+    background: #4CAF50;
+    color: white;
+  }
+  &-time, &-time:hover, &-time:active, &-time:focus {
+    background: #FF9800;
+    color: white;
+  }
+  &-trash, &-trash:hover, &-trash:active, &-trash:focus {
+    background: #F44336;
+    color: white;
+  }
+  &-remove, &-remove:hover, &-remove:active, &-remove:focus {
+    background: #795548;
+    color: white;
+  }
 }
