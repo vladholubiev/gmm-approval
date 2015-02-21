@@ -10,3 +10,9 @@ Template.registerHelper "shortenName", (name) ->
       name
 Template.registerHelper "formatUnixTime", (timestamp) ->
   moment.unix(timestamp).format("HH:mm:ss DD.MM.YYYY")
+Template.registerHelper "isLoggedOut", ->
+  not Meteor.user()
+Template.registerHelper "getIconForApprovalStatus", (status) ->
+  ApprovalStatusIcons[status]
+Template.registerHelper "getTitleForApprovalStatus", (status) ->
+  ApprovalTitles[status]

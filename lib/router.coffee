@@ -5,8 +5,20 @@ Router.configure
   waitOn: ->
     Meteor.subscribe "links"
 
+Router.before (->
+    unless Meteor.userId()
+      @redirect "userUnauthorized"
+      @stop()
+    @next()
+  ),
+  except: [
+    "userUnauthorized"
+  ]
+
 Router.route "/",
   name: "main"
+Router.route "/userUnauthorized",
+  name: "userUnauthorized"
 Router.route "/new-link",
   name: "newLink"
 Router.route "/post/:_id",

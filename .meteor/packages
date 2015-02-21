@@ -24,3 +24,6 @@ alethes:pages
 reactive-var
 obvio171:disqus
 gandev:server-eval
+http
+aldeed:simple-schema
+wizonesolutions:underscore-string
