@@ -9,6 +9,7 @@ Router.before (->
     unless Meteor.userId()
       @redirect "userUnauthorized"
       @stop()
+    GAnalytics.pageview()
     @next()
   ),
   except: [
