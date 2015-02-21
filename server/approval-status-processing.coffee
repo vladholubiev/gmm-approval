@@ -17,7 +17,7 @@ getApprovalStatus = (url) ->
 
 Links.find().observeChanges
   added: (id, link) ->
-    if link.approvalStatus is ApprovalStatuses.processing and Match.test link, LinkSchema
+    if link.approvalStatus is ApprovalStatuses.processing or link.approvalStatus is ApprovalStatuses.pending and Match.test link, LinkSchema
       linkApprovalStatus = getApprovalStatus link.url
 
       console.log "Approval status is #{linkApprovalStatus}"

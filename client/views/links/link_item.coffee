@@ -1,3 +1,6 @@
+Template.linkItem.rendered = ->
+  $ -> $('[data-toggle="tooltip"]').tooltip()
+
 Template.linkItem.events
   "click .open-comments": (e) ->
     $(e.target).tooltip "hide"
