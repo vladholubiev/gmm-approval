@@ -1,3 +1,5 @@
+ALL_LINKS_UPDATE_INTERVAL = 2 * 60 * 60 * 1000 # 2 hours
+
 getApprovalStatus = (url) ->
   PUBLISHED_ICON = "/mapmaker/mapfiles/markerA-k.png"
   PENDING_ICON = "/mapmaker/mapfiles/marker_orangeA-k.png"
@@ -13,14 +15,24 @@ getApprovalStatus = (url) ->
     when _.str.include $.html(), PENDING_ICON then ApprovalStatuses.pending
     when _.str.include $.html(), PLACE_DELETED then ApprovalStatuses.deleted
     when not _.str.include url, "gw=" or _.str.include url, "gw=129" then ApprovalStatuses.malformed
-    else ApprovalStatuses.malformed
+    else
+      ApprovalStatuses.malformed
+
+updateLinkApprovalStatus = (id, link) ->
+  if link.approvalStatus is ApprovalStatuses.processing or link.approvalStatus is ApprovalStatuses.pending and Match.test link, LinkSchema
+    linkApprovalStatus = getApprovalStatus link.url
+
+    console.log "Approval status is #{linkApprovalStatus}"
+
+    Links.update {_id: id}, $set:
+      approvalStatus: linkApprovalStatus
 
 Links.find().observeChanges
   added: (id, link) ->
-    if link.approvalStatus is ApprovalStatuses.processing or link.approvalStatus is ApprovalStatuses.pending and Match.test link, LinkSchema
-      linkApprovalStatus = getApprovalStatus link.url
+    updateLinkApprovalStatus(id, link)
 
-      console.log "Approval status is #{linkApprovalStatus}"
+scheduledLinkApprovalStatusUpdate = ->
+  for link in Links.find().fetch()
+    updateLinkApprovalStatus link._id, link
 
-      Links.update {_id: id}, $set:
-        approvalStatus: linkApprovalStatus
+Meteor.setInterval scheduledLinkApprovalStatusUpdate, ALL_LINKS_UPDATE_INTERVAL
